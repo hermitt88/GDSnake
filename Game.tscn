@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Snake.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game.gd" type="Script" id=3]
+[ext_resource path="res://TileMap.tscn" type="PackedScene" id=4]
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="GameBoard" type="Node2D" parent="."]
+position = Vector2( 20, 20 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="TileMap" parent="." instance=ExtResource( 4 )]
+
+[node name="Snake" parent="TileMap" instance=ExtResource( 2 )]
+z_index = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
