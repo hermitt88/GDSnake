@@ -1,13 +1,17 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Snake.gd" type="Script" id=2]
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+"
 
 [node name="Snake" type="Node2D"]
-script = ExtResource( 2 )
+script = SubResource( 1 )
 
 [node name="Head" type="Node2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="Head"]
 centered = false
 
-[node name="Body" type="Node" parent="."]
+[node name="Body" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Body"]

@@ -15,7 +15,9 @@ wait_time = 0.2
 
 [node name="TileMap" parent="." instance=ExtResource( 4 )]
 
-[node name="Snake" parent="TileMap" instance=ExtResource( 2 )]
+[node name="Snake" parent="." instance=ExtResource( 2 )]
+position = Vector2( 20, 20 )
 z_index = 1
+script = null
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
